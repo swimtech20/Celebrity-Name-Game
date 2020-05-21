@@ -5,6 +5,7 @@ Celebrity Name (and other Nouns) Guessing Game
 
 ## Set Up
 **Requirements**
+_Note_: if you are using another package manager other than node, ignore all terminal commands and npm related steps (you should really be using node).
 - node.js
 - scss
 ```
