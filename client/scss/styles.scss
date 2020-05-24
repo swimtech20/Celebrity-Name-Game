@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 
 @import "mixins";
+@import "variables";
 
 body {
-	background-image: linear-gradient(to bottom right, white, #ff4d4d);
+	background-image: linear-gradient(to bottom right, white, $fire);
 	background-repeat: no-repeat;
 	height: 100%;
 }
@@ -87,26 +88,14 @@ input[type="text"] {
 	@include timer();
 }
 
-@keyframes timerBar-countdown {
-	0% {
-		width: 100%;
-		background: #0f0;
-	}
-	75% {
-		background: #0f0;
-	}
-	100% {
-		width: 0%;
-		background: #f00;
-	}
-}
+// --------------------
+// Media Queries
+// --------------------
 
-/* Media Queries
+// @media screen and (max-width: 1000px) {
+//     h1 {font-size: 2.4em;}
+// }
 
-@media screen and (max-width: 1000px) {
-    h1 {font-size: 2.4em;}
-}
+// @media screen and (max-width: 825px) {
 
-@media screen and (max-width: 825px) {
-
-}*/
+// }

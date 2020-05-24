@@ -187,6 +187,7 @@ function handleEvent(event) {
 
 $("#createRoomButton").click(function () {
 	let playerName = $("#playerName").val();
+	var numberOfSuggestions = $("#numberOfSuggestions").val();
 
 	if (playerName === "") {
 		console.log("HEY YOUR NAME IDIOTLASK Hfujkgh ku");
@@ -194,17 +195,13 @@ $("#createRoomButton").click(function () {
 		return;
 	}
 
-	let numberOfSuggestions =
-		$("#numberOfSuggestions").val() === undefined
-			? 4
-			: $("#numberOfSuggestions").val();
-	let roundDuration =
-		$("#roundDuration").val() === undefined
-			? 30
-			: $("#roundDuration").val();
+	if (!numberOfSuggestions) {
+		numberOfSuggestions = 4;
+	}
 
-	// console.log(numberOfSuggestions.toString());
-	// console.log(roundDuration.toString());
+	if (!roundDuration) {
+		roundDuration = 30;
+	}
 
 	handleEvent({
 		type: "createButtonClicked",
@@ -219,6 +216,7 @@ $("#joinRoomButton").click(function () {
 	let roomCode = $("#joinRoom").val().toUpperCase();
 	if (playerName === "" || roomCode === "") {
 		console.log("HEY IDIOTLASK Hfujkgh ku");
+
 		if (playerName === "" && roomCode === "") {
 			window.alert("Don't be stupid, dumbass.");
 		} else if (playerName === "" && roomCode !== "") {

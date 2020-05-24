@@ -8,12 +8,13 @@ function render(event, data) {
 		$("#lobbyContainer").css("display", "flex");
 		$("#startGameButton").css("display", "block");
 		let celebNumber = 1;
+		console.log(gameState);
 		for (i = 0; i < gameState.numberOfSuggestions; i++) {
 			$("#celebSuggestionList").append(
 				"<li><h2>Celebrity " +
 					celebNumber +
 					"</h2></li>" +
-					'<li><input type="text" placeholder="First Celeb Here!" id="celebSuggestion-' +
+					'<li><input type="text" placeholder="First Celeb Here!" id="celebSuggestion' +
 					celebNumber +
 					'" class="celebSuggestion" /></li>'
 			);
@@ -49,14 +50,14 @@ function render(event, data) {
 		$("#gameContainer").css("display", "flex");
 		//$("#team-container").append("Team 1 is " + event.team1 + " and Team 2 is " + event.team2);
 		$("#teamContainer").css("display", "block");
-		for (i = 0; i < event.team1.length; i++) {
-			$("#team-1").append("<li><h4>" + event.team1[i] + "</h4></li>");
+		for (i = 0; i < gameState.team1.length; i++) {
+			$("#team-1").append("<li><h4>" + gameState.team1[i] + "</h4></li>");
 		}
-		for (i = 0; i < event.team2.length; i++) {
-			$("#team-2").append("<li><h4>" + event.team2[i] + "</h4></li>");
+		for (i = 0; i < gameState.team2.length; i++) {
+			$("#team-2").append("<li><h4>" + gameState.team2[i] + "</h4></li>");
 		}
 		console.log(
-			"Team 1 is " + event.team1 + " and Team 2 is " + event.team2
+			"Team 1 is " + gameState.team1 + " and Team 2 is " + gameState.team2
 		);
 	}
 	//5
